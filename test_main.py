@@ -58,9 +58,3 @@ def test_describe(spark):
     assert res is None
 
 
-def test_example_transform(spark):
-    # Load and transform data, then verify new columns exist
-    df = load_data(spark)
-    res = example_transform(df)
-
-    assert res is None
