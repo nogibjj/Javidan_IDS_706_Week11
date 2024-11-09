@@ -61,6 +61,6 @@ def test_describe(spark):
 def test_example_transform(spark):
     # Load and transform data, then verify new columns exist
     df = load_data(spark)
-    transformed_df = example_transform(df)
+    res = example_transform(df)
 
-    assert transformed_df is None
+    assert res is None
