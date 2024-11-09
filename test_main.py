@@ -5,7 +5,6 @@ from mylib.lib import (
     describe,
     load_data,
     query,
-    example_transform,
 )
 import os
 
