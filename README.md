@@ -69,3 +69,9 @@ To start working with the notebooks and scripts, follow these guidelines:
 
 
 ## Related Images
+![alt text](https://github.com/nogibjj/Javidan_IDS_706_Week10/blob/9ead4be99826e3a6d5497b31b79b162a4ff0b3ad/data/DataTrasnformation.png)
+
+![alt text](https://github.com/nogibjj/Javidan_IDS_706_Week10/blob/9ead4be99826e3a6d5497b31b79b162a4ff0b3ad/data/AnatlyicalQuery.png)
+
+![alt text](https://github.com/nogibjj/Javidan_IDS_706_Week10/blob/9ead4be99826e3a6d5497b31b79b162a4ff0b3ad/data/DescriptiveStats.png)
+
