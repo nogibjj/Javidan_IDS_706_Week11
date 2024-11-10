@@ -12,8 +12,6 @@ This repository contains materials and code for Week 10 of the IDS 706 course. T
 - [Project Structure](#project-structure)
 - [Setup Instructions](#setup-instructions)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 This repository is designed for the Week 10 assignment of the IDS 706 course. It focuses on implementing PySpark through Databricks, GitHub Workspace, or local deployment. This environment is fully compatible with GitHub Workspace, and all necessary configurations have been set. The Olympic dataset is used for data transformation tasks. Pyspark processes relatively big dataset, providing descriptive analysis over the dataset, providing analtyical query and so on.
