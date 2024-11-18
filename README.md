@@ -3,7 +3,7 @@
 
 ![alt text](https://miro.medium.com/v2/resize:fit:928/1*VMlX9-xnnS9Gc-vFgLwf0Q.png)
 
-# Javidan_IDS_706_Week10
+# Javidan_IDS_706_Week11
 
 This repository contains materials and code for Week 10 of the IDS 706 course. This week's focus is on advanced data science techniques and tools, with hands-on projects to deepen understanding and apply skills in a practical context.
 
@@ -26,7 +26,7 @@ To set up this project locally, follow these steps:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/nogibjj/Javidan_IDS_706_Week10.git
+    git clone https://github.com/nogibjj/Javidan_IDS_706_Week11.git
     cd Javidan_IDS_706_Week10
     ```
 
