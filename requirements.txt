@@ -15,4 +15,5 @@ databricks
 pyspark
 requests
 tabulate
+python-dotenv==1.0.1
 
