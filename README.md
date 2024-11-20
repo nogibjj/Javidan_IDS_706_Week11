@@ -10,7 +10,7 @@ This repository contains materials and code for Week 11 of the IDS 706 course. T
 - [Overview](#overview)
 - [Project Structure](#project-structure)
 - [Setup Instructions](#setup-instructions)
-- [Pipeline Structure][#Pipeline]
+- [Pipeline Structure][#pipeline]
 - [Usage](#usage)
 
 
@@ -44,9 +44,9 @@ The pipeline consists of three distinct parts. The first step extracts the CSV f
 ## Usage
 To start working with the notebooks and scripts, follow these guidelines:
 
-- Fork the repo
-- Open Github Workspace on your repo
-- Execute main.py and make appropriate changes to it.
+- Open Databricks Workspace
+- Click on Create button and choose the git
+- Put the github repo under Git repository URL.
 
 - Features
 
@@ -71,9 +71,7 @@ To start working with the notebooks and scripts, follow these guidelines:
 
 
 ## Related Images
-![alt text](https://github.com/nogibjj/Javidan_IDS_706_Week10/blob/9ead4be99826e3a6d5497b31b79b162a4ff0b3ad/data/DataTrasnformation.png)
 
-![alt text](https://github.com/nogibjj/Javidan_IDS_706_Week10/blob/9ead4be99826e3a6d5497b31b79b162a4ff0b3ad/data/AnatlyicalQuery.png)
+![alt text](https://github.com/nogibjj/Javidan_IDS_706_Week11/blob/cc80d3a6462baafafa3fcf40ea6ba9b3be152c04/data/DatabricksTransformOutput.png)
 
-![alt text](https://github.com/nogibjj/Javidan_IDS_706_Week10/blob/9ead4be99826e3a6d5497b31b79b162a4ff0b3ad/data/DescriptiveStats.png)
-
+![alt text](https://github.com/nogibjj/Javidan_IDS_706_Week11/blob/cc80d3a6462baafafa3fcf40ea6ba9b3be152c04/data/ClusterDetails.png)
