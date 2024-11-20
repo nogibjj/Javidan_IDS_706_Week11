@@ -1,20 +1,18 @@
-
-[![CI](https://github.com/nogibjj/Javidan_IDS_706_Week10/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Javidan_IDS_706_Week10/actions/workflows/cicd.yml)
+[![CI](https://github.com/nogibjj/Javidan_IDS_706_Week11/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Javidan_IDS_706_Week11/actions/workflows/cicd.yml)
 
 ![alt text](https://miro.medium.com/v2/resize:fit:928/1*VMlX9-xnnS9Gc-vFgLwf0Q.png)
 
 # Javidan_IDS_706_Week11
 
-This repository contains materials and code for Week 10 of the IDS 706 course. This week's focus is on advanced data science techniques and tools, with hands-on projects to deepen understanding and apply skills in a practical context.
+This repository contains materials and code for Week 11 of the IDS 706 course. This week focuses on creating a data ELT pipeline on Databricks and testing Databricks using REST APIs. The application utilizes a CSV file stored on GitHub, loads it into the Databricks Warehouse, and enhances data quality through transformations.
 
 ## Table of Contents
 - [Overview](#overview)
 - [Project Structure](#project-structure)
 - [Setup Instructions](#setup-instructions)
+- [Pipeline Structure][#Pipeline]
 - [Usage](#usage)
 
-## Overview
-This repository is designed for the Week 10 assignment of the IDS 706 course. It focuses on implementing PySpark through Databricks, GitHub Workspace, or local deployment. This environment is fully compatible with GitHub Workspace, and all necessary configurations have been set. The Olympic dataset is used for data transformation tasks. Pyspark processes relatively big dataset, providing descriptive analysis over the dataset, providing analtyical query and so on.
 
 ## Project Structure
 The repository contains the following files and folders:
@@ -27,7 +25,7 @@ To set up this project locally, follow these steps:
 1. **Clone the repository**:
     ```bash
     git clone https://github.com/nogibjj/Javidan_IDS_706_Week11.git
-    cd Javidan_IDS_706_Week10
+    cd Javidan_IDS_706_Week11
     ```
 
 2. **Install dependencies**:
@@ -35,6 +33,12 @@ To set up this project locally, follow these steps:
     ```bash
     make install
     ```
+
+## Pipeline
+The pipeline consists of three distinct parts. The first step extracts the CSV file and loads it into memory. The second step processes the data and loads it into a predefined Databricks table. Finally, the third step reads this data, applies transformations, and stores the result in a different table.
+
+![alt text](https://github.com/nogibjj/Javidan_IDS_706_Week11/blob/19a6551ae0705cd01a76032a19497beb901220fa/data/ELT_Pipeline.png)
+
 
 
 ## Usage
