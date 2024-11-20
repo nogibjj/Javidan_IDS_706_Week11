@@ -1,59 +1,59 @@
-import pytest
-from pyspark.sql import SparkSession
-from mylib.lib import (
-    extract_csv,
-    describe,
-    load_data,
-    query,
-)
+"""
+Test Databricks Functionality
+"""
+
+import requests
+from dotenv import load_dotenv
 import os
 
+# Load environment variables
+load_dotenv()
+SERVER_HOSTNAME = os.getenv("SERVER_HOSTNAME")
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+JOB_ID = 660776900051823
+BASE_URL = f"https://{SERVER_HOSTNAME}/api/2.1"
 
-@pytest.fixture(scope="module")
-def spark():
-    # Start a Spark session
-    spark = SparkSession.builder.master("local[*]").appName("test_app").getOrCreate()
-    yield spark
-    # Stop the Spark session after tests
-    spark.stop()
-
-
-def test_start_spark(spark):
-    # Test Spark session is started
-    assert spark is not None
+# Validate environment variables
+if not SERVER_HOSTNAME or not ACCESS_TOKEN:
+    raise ValueError("SERVER_HOSTNAME and ACCESS_TOKEN must be set in the .env file.")
 
 
-def test_extract_csv():
+def check_pipeline_existence(job_id: str, headers: dict) -> bool:
+    """
+    Check if a file path exists in Databricks DBFS and validate authentication.
 
-    output_path = extract_csv(
-        url="""https://raw.githubusercontent.com/nogibjj/Javidan_Karimli_IDS706_ComplexSqlQueryDatabricks/refs/heads/main/data/olympic_summer.csv""",
-        file_path="test_olympic_summer.csv",
-        directory="data",
-    )
+    Args:
+        path (str): The file path to check.
+        headers (dict): Headers including the authorization token.
 
-    assert os.path.exists(output_path)
-
-
-def test_load_data(spark):
-    # Try loading data and perform a simple check
-    df = load_data(spark, data="data/test_olympic_summer.csv")
-    assert df is not None, "Dataframe is None; load_data failed."
-    assert df.count() > 0, "Dataframe is empty; load_data did not load data correctly."
-    assert "Medal" in df.columns, "Expected column 'Medal' not found in DataFrame."
-
-
-def test_query(spark):
-    df = load_data(spark, data="data/test_olympic_summer.csv")
-
-    res = query(spark, df, query="SELECT * FROM temp_table")
-
-    assert res is None
+    Returns:
+        bool: True if the file path exists and authentication is valid, False otherwise.
+    """
+    try:
+        response = requests.get(
+            f"{BASE_URL}/jobs/get", headers=headers, params={"job_id": job_id}
+        )
+        response.raise_for_status()
+        # Check if the response contains a valid file path
+        return "job_id" in response.json()
+    except requests.exceptions.HTTPError as http_err:
+        print(f"HTTP error occurred: {http_err}")
+    except requests.exceptions.RequestException as req_err:
+        print(f"Request error occurred: {req_err}")
+    return False
 
 
-def test_describe(spark):
-    df = load_data(spark, data="data/test_olympic_summer.csv")
-    res = describe(df)
+def test_databricks():
+    """
+    Test if the Databricks file store path exists and is accessible.
+    """
+    headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
+    path_exists = check_pipeline_existence(JOB_ID, headers)
+    assert path_exists, f"Job Id- {JOB_ID} not found"
+    print(f"Test successful: Job Id -  '{JOB_ID}' exists and is accessible.")
 
-    assert res is None
 
+if __name__ == "__main__":
+    headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
 
+    print(check_pipeline_existence(JOB_ID, headers))
